@@ -7,15 +7,22 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [20.x]
+
+    env:
+      SESSION_ID: 𝙰𝚂𝙸𝚃𝙷𝙰-𝙼𝙳=CyYDCZhA#uh0e7hl4Sw-d64Sv7IMldBth2XSbBsQA3qlnan9__-U
+      GITHUB_AUTH_TOKEN:
+      BOT_NUMBER: 94781539294
 
     steps:
     - name: Checkout repository
